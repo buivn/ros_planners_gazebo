@@ -1,0 +1,10 @@
+<launch>
+  <arg name="arm_id" default="fetch"/>
+
+  <node name="mp_api" pkg="fetch_gazebo_moveit" type="mp_api" respawn="false" output="screen">
+    <rosparam command="load" file="$(find fetch_moveit_config)/config/kinematics.yaml" subst_value="true"/>
+    <param name="/planning_plugin" value="ompl_interface/OMPLPlanner"/>
+    <rosparam command="load" file="$(find fetch_moveit_config)/config/ompl_planning.yaml"/>
+  </node>
+
+</launch>

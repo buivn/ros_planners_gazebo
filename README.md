@@ -12,6 +12,7 @@ Procedures:
 Run two launch files and a planning script:
 - roslaunch fetch_gazebo planning.launch
 - roslaunch fetch_moveit_config move_group.launch
+
 The first launch file loads an Gazebo environment and a robot robot model. The second launch file loads a planner for planning.
 
 - rosrun fetch_gazebo_moveit planning_pose.py 
