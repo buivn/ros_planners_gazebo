@@ -19,5 +19,15 @@ The first launch file loads an Gazebo environment and a robot robot model. The s
 This script provide some target pose for the manipulator to move.
 
 
-<!-- 2. Mobile robots -->
+2. Mobile robot
+To move the fetch around, we can use package movebase to control the process. 
+
+Run two launch files:
+- roslaunch fetch_gazebo planning.launch
+- roslaunch fetch_gazebo_moveit movebase.launch
+
+Then, run this script:
+- rosrun fetch_gazebo_moveit move_robot.py
+
+There is still a problem of robot rotating around the stop point, not standstill. (need to fix this).
 
