@@ -1,4 +1,4 @@
-# ROS Planning Interfaces
+# ROS Planner Interfaces
 This repo is to provide planning interface connecting from planners to robot's models or physical robots.
 
 The initial applications aim to:
