@@ -6,13 +6,13 @@ from geometry_msgs.msg import PoseStamped, Pose, Point, Quaternion
 
 if __name__ == '__main__':
     rospy.init_node("planningforpose")
-    move_group = MoveGroupInterface("arm_with_torso", "base_link")
+    move_group = MoveGroupInterface("arm", "base_link")
 
     gripper_frame = 'wrist_roll_link'
-    # Position and rotation of two "wave end poses"
-    gripper_poses = [Pose(Point(0.042, 0.384, 1.826),
+    # set two poses for the gripper to move around"
+    gripper_poses = [Pose(Point(0.1, 0.384, 1.326),
                           Quaternion(0.173, -0.693, -0.242, 0.657)),
-                     Pose(Point(0.047, 0.545, 1.822),
+                     Pose(Point(0.1, 0.545, 1.322),
                           Quaternion(-0.274, -0.701, 0.173, 0.635))]
 
     gripper_pose_stamped = PoseStamped()
@@ -37,5 +37,4 @@ if __name__ == '__main__':
                 rospy.logerr("Failure no result returned.")
 
     # This stops all arm movement goals
-    # It should be called when a program is exiting so movement stops
     move_group.get_move_action().cancel_all_goals()
